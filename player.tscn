@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cplpxwv1c5mxs"]
+
+[ext_resource type="PackedScene" uid="uid://csgsvbtiebwtv" path="res://art/Strawberry_gltf.gltf" id="1_dg8qr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ag1yc"]
+radius = 2.55795
+height = 9.16617
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Strawberry_gltf" parent="Pivot" instance=ExtResource("1_dg8qr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0235705, 2.03939, -0.119257)
+shape = SubResource("CapsuleShape3D_ag1yc")
