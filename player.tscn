@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cplpxwv1c5mxs"]
+[gd_scene load_steps=4 format=3 uid="uid://cplpxwv1c5mxs"]
 
 [ext_resource type="PackedScene" uid="uid://csgsvbtiebwtv" path="res://art/Strawberry_gltf.gltf" id="1_dg8qr"]
+[ext_resource type="Script" path="res://player.gd" id="1_w8m4j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ag1yc"]
 radius = 2.55795
 height = 9.16617
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_w8m4j")
 
 [node name="Pivot" type="Node3D" parent="."]
 
