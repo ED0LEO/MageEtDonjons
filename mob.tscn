@@ -14,3 +14,6 @@ height = 1.61328
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_p3jic")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.182183, -0.735073, -0.265539, 0.364365, 1.47015, 0.531079)
