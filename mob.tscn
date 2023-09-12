@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cufcoli28883l"]
+
+[ext_resource type="PackedScene" uid="uid://cl2y2bejr0snh" path="res://art/SunswordStylized.fbx" id="1_3tuwc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p3jic"]
+radius = 0.211794
+height = 1.61328
+
+[node name="Mob" type="CharacterBody3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Sword" parent="Pivot" instance=ExtResource("1_3tuwc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_p3jic")
