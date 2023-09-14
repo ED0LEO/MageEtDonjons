@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ei7yuxef2awf"]
+[gd_scene load_steps=5 format=3 uid="uid://ei7yuxef2awf"]
 
 [ext_resource type="PackedScene" uid="uid://cplpxwv1c5mxs" path="res://player.tscn" id="1_tfpmv"]
 
@@ -7,6 +7,8 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g0b5e"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xrsld"]
 
 [node name="Main" type="Node"]
 
@@ -30,3 +32,9 @@ transform = Transform3D(1, 0, 0, 0, 0.823661, 0.567082, 0, -0.567082, 0.823661, 
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(0.999948, 0.0100718, -0.00131758, -0.0101576, 0.991501, -0.129706, 5.21987e-10, 0.129713, 0.991552, 0, 5.76389, 16.8989)
+
+[node name="Cylinders" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, -22)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
+mesh = SubResource("CylinderMesh_xrsld")
