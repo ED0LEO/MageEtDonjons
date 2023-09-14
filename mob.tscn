@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cufcoli28883l"]
+[gd_scene load_steps=4 format=3 uid="uid://cufcoli28883l"]
 
 [ext_resource type="PackedScene" uid="uid://cl2y2bejr0snh" path="res://art/SunswordStylized.fbx" id="1_3tuwc"]
+[ext_resource type="Script" path="res://mob.gd" id="1_g4er4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p3jic"]
 radius = 0.211794
 height = 1.61328
 
 [node name="Mob" type="CharacterBody3D"]
+script = ExtResource("1_g4er4")
 
 [node name="Pivot" type="Node3D" parent="."]
 
@@ -17,3 +19,5 @@ shape = SubResource("CapsuleShape3D_p3jic")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 aabb = AABB(-0.182183, -0.735073, -0.265539, 0.364365, 1.47015, 0.531079)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
