@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ei7yuxef2awf"]
+[gd_scene load_steps=7 format=3 uid="uid://ei7yuxef2awf"]
 
 [ext_resource type="PackedScene" uid="uid://cplpxwv1c5mxs" path="res://player.tscn" id="1_tfpmv"]
 
@@ -13,6 +13,13 @@ albedo_color = Color(0.988235, 0.529412, 0.176471, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_xrsld"]
 material = SubResource("StandardMaterial3D_hwtj5")
+
+[sub_resource type="Curve3D" id="Curve3D_0ib2p"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -25.4996, 0.0163422, -22.0838, 0, 0, 0, 0, 0, 0, -26.1746, -0.607769, 22.8791, 0, 0, 0, 0, 0, 0, 24.9918, -0.565453, 22.2681, 0, 0, 0, 0, 0, 0, 24.8959, 0.0456047, -21.7909, 0, 0, 0, 0, 0, 0, -25.4996, 0.0163422, -22.0838),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="Main" type="Node"]
 
@@ -54,3 +61,6 @@ mesh = SubResource("CylinderMesh_xrsld")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42)
 mesh = SubResource("CylinderMesh_xrsld")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_0ib2p")
