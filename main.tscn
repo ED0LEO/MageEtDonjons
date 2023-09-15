@@ -39,20 +39,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, -21)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
 mesh = SubResource("CylinderMesh_xrsld")
 
-[node name="Cylinders2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -21)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders2"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
 mesh = SubResource("CylinderMesh_xrsld")
 
-[node name="Cylinders3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 21)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders3"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 42)
 mesh = SubResource("CylinderMesh_xrsld")
 
-[node name="Cylinders4" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, 21)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders4"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42)
 mesh = SubResource("CylinderMesh_xrsld")
