@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ei7yuxef2awf"]
+[gd_scene load_steps=6 format=3 uid="uid://ei7yuxef2awf"]
 
 [ext_resource type="PackedScene" uid="uid://cplpxwv1c5mxs" path="res://player.tscn" id="1_tfpmv"]
 
@@ -8,7 +8,11 @@ size = Vector3(60, 2, 60)
 [sub_resource type="BoxMesh" id="BoxMesh_g0b5e"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwtj5"]
+albedo_color = Color(0.988235, 0.529412, 0.176471, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_xrsld"]
+material = SubResource("StandardMaterial3D_hwtj5")
 
 [node name="Main" type="Node"]
 
