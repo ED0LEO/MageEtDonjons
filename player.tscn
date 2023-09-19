@@ -8,6 +8,7 @@ radius = 2.55795
 height = 9.16617
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 6
 script = ExtResource("1_w8m4j")
 
 [node name="Pivot" type="Node3D" parent="."]

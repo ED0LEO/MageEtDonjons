@@ -8,6 +8,8 @@ radius = 0.211794
 height = 1.61328
 
 [node name="Mob" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_g4er4")
 
 [node name="Pivot" type="Node3D" parent="."]
