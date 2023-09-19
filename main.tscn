@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ei7yuxef2awf"]
+[gd_scene load_steps=9 format=3 uid="uid://ei7yuxef2awf"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_2opj5"]
 [ext_resource type="PackedScene" uid="uid://cplpxwv1c5mxs" path="res://player.tscn" id="1_tfpmv"]
+[ext_resource type="PackedScene" uid="uid://cufcoli28883l" path="res://mob.tscn" id="2_8jhrn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_punpu"]
 size = Vector3(60, 2, 60)
@@ -22,6 +24,8 @@ _data = {
 point_count = 5
 
 [node name="Main" type="Node"]
+script = ExtResource("1_2opj5")
+mob_scene = ExtResource("2_8jhrn")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -1, 2.08165e-12)
@@ -62,5 +66,12 @@ mesh = SubResource("CylinderMesh_xrsld")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42)
 mesh = SubResource("CylinderMesh_xrsld")
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="SpawnPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_0ib2p")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.999887, -0.000208313, 0.0150092, 0, 0.999904, 0.0138777, -0.0150107, 0.0138761, -0.999791, -25.4996, 0.0163422, -22.0838)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
