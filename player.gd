@@ -10,6 +10,9 @@ extends CharacterBody3D
 # meters per second.
 @export var bounce_impulse = 16
 
+# Emitted when the player was hit by a mob.
+signal hit
+
 var target_velocity = Vector3.ZERO
 
 func _physics_process(delta):
@@ -63,3 +66,10 @@ func _physics_process(delta):
 				# If so, we squash it and bounce.
 				mob.squash()
 				target_velocity.y = bounce_impulse
+
+func die():
+	hit.emit()
+	queue_free()
+
+func _on_mob_detector_body_entered(body):
+	die()
