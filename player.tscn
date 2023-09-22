@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cplpxwv1c5mxs"]
+[gd_scene load_steps=5 format=3 uid="uid://cplpxwv1c5mxs"]
 
 [ext_resource type="PackedScene" uid="uid://csgsvbtiebwtv" path="res://art/Strawberry_gltf.gltf" id="1_dg8qr"]
 [ext_resource type="Script" path="res://player.gd" id="1_w8m4j"]
@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ag1yc"]
 radius = 2.55795
 height = 9.16617
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pyw0l"]
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 6
@@ -18,3 +20,12 @@ script = ExtResource("1_w8m4j")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0235705, 2.03939, -0.119257)
 shape = SubResource("CapsuleShape3D_ag1yc")
+
+[node name="MobDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+transform = Transform3D(5, 0, 0, 0, 3, 0, 0, 0, 5, -0.0582018, 2.73079, -0.349187)
+shape = SubResource("CylinderShape3D_pyw0l")
