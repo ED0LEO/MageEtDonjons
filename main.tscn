@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ei7yuxef2awf"]
+[gd_scene load_steps=12 format=3 uid="uid://ei7yuxef2awf"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_2opj5"]
 [ext_resource type="PackedScene" uid="uid://cplpxwv1c5mxs" path="res://player.tscn" id="1_tfpmv"]
@@ -26,6 +26,12 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="SystemFont" id="SystemFont_y5gc0"]
+
+[sub_resource type="Theme" id="Theme_fipqf"]
+default_font = SubResource("SystemFont_y5gc0")
+default_font_size = 50
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2opj5")
@@ -89,6 +95,7 @@ offset_left = 27.0
 offset_top = 22.0
 offset_right = 90.0
 offset_bottom = 66.0
+theme = SubResource("Theme_fipqf")
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
 layout_mode = 0
