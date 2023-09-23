@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ei7yuxef2awf"]
+[gd_scene load_steps=10 format=3 uid="uid://ei7yuxef2awf"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_2opj5"]
 [ext_resource type="PackedScene" uid="uid://cplpxwv1c5mxs" path="res://player.tscn" id="1_tfpmv"]
@@ -7,7 +7,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_punpu"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhrjm"]
+albedo_color = Color(0.34902, 0.470588, 0.341176, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_g0b5e"]
+material = SubResource("StandardMaterial3D_yhrjm")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwtj5"]
@@ -45,7 +49,7 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_tfpmv")]
 
 [node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.823661, 0.567082, 0, -0.567082, 0.823661, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.823661, 0.567082, 0, -0.567082, 0.823661, 0, -7, -4)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(0.999948, 0.0100718, -0.00131758, -0.0101576, 0.991501, -0.129706, 5.21987e-10, 0.129713, 0.991552, 0, 5.76389, 16.8989)

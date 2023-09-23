@@ -10,6 +10,7 @@ height = 9.16617
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pyw0l"]
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 collision_mask = 6
 script = ExtResource("1_w8m4j")
 
