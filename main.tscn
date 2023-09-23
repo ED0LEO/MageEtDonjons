@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ei7yuxef2awf"]
+[gd_scene load_steps=13 format=3 uid="uid://ei7yuxef2awf"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_2opj5"]
 [ext_resource type="PackedScene" uid="uid://cplpxwv1c5mxs" path="res://player.tscn" id="1_tfpmv"]
 [ext_resource type="PackedScene" uid="uid://cufcoli28883l" path="res://mob.tscn" id="2_8jhrn"]
+[ext_resource type="Script" path="res://ScoreLabel.gd" id="4_1sdmk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_punpu"]
 size = Vector3(60, 2, 60)
@@ -93,8 +94,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 27.0
 offset_top = 22.0
-offset_right = 90.0
-offset_bottom = 66.0
+offset_right = 226.0
+offset_bottom = 94.0
 theme = SubResource("Theme_fipqf")
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
@@ -103,6 +104,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: 0"
+script = ExtResource("4_1sdmk")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
