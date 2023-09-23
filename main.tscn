@@ -78,5 +78,20 @@ transform = Transform3D(-0.999887, -0.000208313, 0.0150092, 0, 0.999904, 0.01387
 wait_time = 0.5
 autostart = true
 
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 27.0
+offset_top = 22.0
+offset_right = 90.0
+offset_bottom = 66.0
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score: 0"
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
