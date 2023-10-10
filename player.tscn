@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cplpxwv1c5mxs"]
+[gd_scene load_steps=7 format=3 uid="uid://cplpxwv1c5mxs"]
 
 [ext_resource type="PackedScene" uid="uid://csgsvbtiebwtv" path="res://art/Strawberry_gltf.gltf" id="1_dg8qr"]
 [ext_resource type="Script" path="res://player.gd" id="1_w8m4j"]
@@ -8,6 +8,16 @@ radius = 2.55795
 height = 9.16617
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pyw0l"]
+
+[sub_resource type="Animation" id="Animation_ry2c4"]
+resource_name = "float"
+length = 1.2
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77p1g"]
+_data = {
+"float": SubResource("Animation_ry2c4")
+}
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -30,5 +40,11 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
 transform = Transform3D(5, 0, 0, 0, 3, 0, 0, 0, 5, -0.0582018, 2.73079, -0.349187)
 shape = SubResource("CylinderShape3D_pyw0l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_77p1g")
+}
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
